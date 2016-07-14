@@ -3,6 +3,9 @@
     merge = require('merge'),
     fs = require("fs"),
     del = require('del'),
+    uglify = require('gulp-uglify'),
+    minify = require('gulp-minify'),
+    cleanCSS = require('gulp-clean-css'),
     path = require('path');
 
 eval("var project = " + fs.readFileSync("./project.json"));
@@ -36,6 +39,8 @@ gulp.task('setup-vendors', function (done) {
       'node_modules/angular2-in-memory-web-api/**.js',
     ]).pipe(gulp.dest(paths.jsAngularApiVendors));
     gulp.src([
+      'bower_components/alertify.js/lib/alertify.*js',
+      'bower_components/bootstrap/dist/js/bootstrap*.js',
       'node_modules/zone.js/dist/zone.*js',
       'node_modules/es6-shim/es6-shim.*js',
       'node_modules/reflect-metadata/Reflect.*js',
@@ -43,20 +48,28 @@ gulp.task('setup-vendors', function (done) {
       'node_modules/zone.js/dist/zone.*js',
       'node_modules/zone.js/dist/zone.*js',
       'node_modules/jquery/dist/jquery.*js',
-      'bower_components/bootstrap/dist/js/bootstrap*.js',
-      'node_modules/fancybox/dist/js/jquery.fancybox.pack.js',
-      'bower_components/alertify.js/lib/alertify.min.js',
+      'node_modules/moment/*.js',
+      'node_modules/lodash/lodash.*js',
+      'node_modules/fancybox/dist/js/jquery.fancybox.pack.*js',
+      'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.*js',
+      'node_modules/bootstrap-timepicker/js/bootstrap-timepicker.*js',
+      'node_modules/core-js/client/shim.*js',
+      'node_modules/reflect-metadata/Reflect.*js',
+      'node_modules/systemjs/dist/system.*js',
       'systemjs.config.js'
     ]).pipe(gulp.dest(paths.jsVendors));
 
     gulp.src([
-      'bower_components/bootstrap/dist/css/bootstrap.css',
-      'node_modules/fancybox/dist/css/jquery.fancybox.css',
-      'bower_components/components-font-awesome/css/font-awesome.css',
-      'bower_components/alertify.js/themes/alertify.core.css',
-      'bower_components/alertify.js/themes/alertify.bootstrap.css',
-      'bower_components/alertify.js/themes/alertify.default.css'
-    ]).pipe(gulp.dest(paths.cssVendors));
+      'bower_components/bootstrap/dist/css/bootstrap.*css',
+      'bower_components/font-awesome/css/font-awesome.*css',
+      'bower_components/alertify.js/themes/alertify.core.*css',
+      'bower_components/alertify.js/themes/alertify.bootstrap.*css',
+      'bower_components/alertify.js/themes/alertify.default.*css',
+      'node_modules/fancybox/dist/css/jquery.fancybox.*css',
+      'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.*css',
+      'node_modules/ng2-slim-loading-bar/ng2-slim-loading-bar.*css',
+      'node_modules/bootstrap-timepicker/css/bootstrap-timepicker.*css',
+    ]).pipe(gulp.dest(paths.cssVendors)).pipe(minify());
 
     gulp.src([
       'node_modules/fancybox/dist/img/blank.gif',
@@ -82,6 +95,12 @@ gulp.task('setup-vendors', function (done) {
     ]).pipe(gulp.dest(paths.fontsVendors));
 });
 
+
+gulp.task('minify-css', function () {
+    return gulp.src('wwwroot/css/*.css')
+      .pipe(cleanCSS())
+      .pipe(gulp.dest('wwwroot/css'));
+});
 gulp.task('compile-typescript', function (done) {
     var tsResult = gulp.src([
        "wwwroot/app/**/*.ts"
@@ -100,4 +119,4 @@ gulp.task('clean-lib', function () {
     return del([lib]);
 });
 
-gulp.task('build-spa', ['setup-vendors', 'compile-typescript']);
+gulp.task('build-spa', ['setup-vendors', 'minify-css', 'compile-typescript']);

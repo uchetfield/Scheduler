@@ -12,6 +12,10 @@ namespace Scheduler.SPA.Controllers
         {
             return View();
         }
+        public IActionResult SPA()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
