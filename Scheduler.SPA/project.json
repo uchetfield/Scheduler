@@ -1,6 +1,7 @@
 ﻿{
   "userSecretsId": "aspnet-Scheduler.SPA-0f211951-6658-4778-a95e-3f8bd61a2ca0",
 
+  "webroot": "wwwroot",
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
