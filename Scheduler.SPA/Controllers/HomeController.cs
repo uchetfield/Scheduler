@@ -12,6 +12,7 @@ namespace Scheduler.SPA.Controllers
         {
             return View();
         }
+        [Route("~/SPA")]
         public IActionResult SPA()
         {
             return View();

@@ -23,6 +23,9 @@ var paths = {
     fontsVendors: lib + 'fonts',
     jsAngularVendors: lib + 'js/@angular',
     jsAngularApiVendors: lib + 'js/angular2-in-memory-web-api',
+    jsng2bootstrapVendors: lib + 'js/ng2-bootstrap',
+    jsng2slimloadingbarVendors: lib + 'js/ng2-slim-loading-bar',
+    jsng2bs3modalVendors: lib + 'js/ng2-bs3-modal',
 };
 
 
@@ -36,7 +39,19 @@ gulp.task('setup-vendors', function (done) {
       'node_modules/@angular/**/*.js',
     ]).pipe(gulp.dest(paths.jsAngularVendors));
     gulp.src([
-      'node_modules/angular2-in-memory-web-api/**.js',
+      'node_modules/angular2-in-memory-web-api/**/*.js',
+    ]).pipe(gulp.dest(paths.jsAngularApiVendors));
+    gulp.src([
+      'node_modules/ng2-bootstrap/**/*.js',
+    ]).pipe(gulp.dest(paths.jsng2bootstrapVendors));
+    gulp.src([
+      'node_modules/ng2-slim-loading-bar/**/*.js',
+    ]).pipe(gulp.dest(paths.jsng2slimloadingbarVendors));
+    gulp.src([
+      'node_modules/ng2-bs3-modal/**/*.js',
+    ]).pipe(gulp.dest(paths.jsng2bs3modalVendors));
+    gulp.src([
+      'node_modules/angular2-in-memory-web-api/**/*.js',
     ]).pipe(gulp.dest(paths.jsAngularApiVendors));
     gulp.src([
       'bower_components/alertify.js/lib/alertify.*js',
@@ -56,6 +71,8 @@ gulp.task('setup-vendors', function (done) {
       'node_modules/core-js/client/shim.*js',
       'node_modules/reflect-metadata/Reflect.*js',
       'node_modules/systemjs/dist/system.*js',
+      'node_modules/moment/moment.js',
+      'node_modules/ng2-datetime/ng2-datetime.js',
       'systemjs.config.js'
     ]).pipe(gulp.dest(paths.jsVendors));
 
