@@ -91,13 +91,13 @@ var DataService = (function () {
         })
             .catch(this.handleError);
     };
-    DataService.prototype.getSchedule = function (id) {
-        return this.http.get(this._baseUrl + 'schedules/' + id)
-            .map(function (res) {
-            return res.json();
-        })
-            .catch(this.handleError);
-    };
+    //getSchedule(id: number): Observable<Schedule> {
+    //    return this.http.get(this._baseUrl + 'schedules/' + id)
+    //        .map((res: Response) => {
+    //            return res.json();
+    //        })
+    //        .catch(this.handleError);
+    //}
     DataService.prototype.getScheduleDetails = function (id) {
         return this.http.get(this._baseUrl + 'schedules/' + id + '/details')
             .map(function (res) {

@@ -99,13 +99,13 @@ export class DataService {
             .catch(this.handleError);
     }
 
-    getSchedule(id: number): Observable<Schedule> {
-        return this.http.get(this._baseUrl + 'schedules/' + id)
-            .map((res: Response) => {
-                return res.json();
-            })
-            .catch(this.handleError);
-    }
+    //getSchedule(id: number): Observable<Schedule> {
+    //    return this.http.get(this._baseUrl + 'schedules/' + id)
+    //        .map((res: Response) => {
+    //            return res.json();
+    //        })
+    //        .catch(this.handleError);
+    //}
 
     getScheduleDetails(id: number): Observable<IScheduleDetails> {
         return this.http.get(this._baseUrl + 'schedules/' + id + '/details')

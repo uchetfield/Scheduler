@@ -26,7 +26,7 @@ var paths = {
 };
 
 
-var tsProject = ts.createProject('./wwwroot/tsconfig.json');
+var tsProject = ts.createProject('./tsconfig.json');
 
 gulp.task('setup-vendors', function (done) {
     gulp.src([
