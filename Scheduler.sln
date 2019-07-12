@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Scheduler.Model", "Scheduler.Model\Scheduler.Model.xproj", "{F0D53D78-0353-402D-B8AA-8F0D8AC3B356}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.Model", "Scheduler.Model\Scheduler.Model.csproj", "{F0D53D78-0353-402D-B8AA-8F0D8AC3B356}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Scheduler.Data", "Scheduler.Data\Scheduler.Data.xproj", "{A42B23B3-328F-40D5-AAEE-294DB1C6AD99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.Data", "Scheduler.Data\Scheduler.Data.csproj", "{A42B23B3-328F-40D5-AAEE-294DB1C6AD99}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Scheduler.API", "Scheduler.API\Scheduler.API.xproj", "{B41997DD-84A6-4039-9AF8-E25C36E3FFE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.API", "Scheduler.API\Scheduler.API.csproj", "{B41997DD-84A6-4039-9AF8-E25C36E3FFE5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Scheduler.SPA", "Scheduler.SPA\Scheduler.SPA.xproj", "{3A6CE610-4561-4F88-A875-D09698B5E892}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.SPA", "Scheduler.SPA\Scheduler.SPA.csproj", "{3A6CE610-4561-4F88-A875-D09698B5E892}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Angular2Features", "Angular2Features\", "{26279687-73BE-41F2-9884-DC1A51B7E2BA}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -32,7 +32,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Angular2Features", "Angular
 		SlnRelativePath = "Angular2Features\"
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebApplication1", "WebApplication1\WebApplication1.xproj", "{3235B5C5-DF42-4588-A5C5-0280C292C775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3235B5C5-DF42-4588-A5C5-0280C292C775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,5 +67,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B16FE161-1EA0-4F0A-833B-A4B5803C87B8}
 	EndGlobalSection
 EndGlobal
