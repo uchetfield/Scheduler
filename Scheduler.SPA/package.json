@@ -20,7 +20,7 @@
     "browser-sync": "^2.13.0",
     "core-js": "^2.4.0",
     "fancybox": "3.0.0",
-    "jquery": "2.2.4",
+    "jquery": "3.5.0",
     "lodash": "^4.13.1",
     "moment": "^2.13.0",
     "ng2-bootstrap": "^1.0.17",
